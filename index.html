@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Listikus – Die clevere Einkaufsliste</title>
+<meta name="description" content="Listikus ist die clevere Einkaufsliste für die ganze Familie: gemeinsame Listen in Echtzeit, KI-Import und mehr.">
+<style>
+  :root{
+    --green:#2E7D32; --green-dark:#1B5E20;
+    --surface:#F1F7EF; --ink:#1C2A1E; --muted:#5B6B5D; --line:#DCE7D8;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink); background:#fff; line-height:1.6;
+  }
+  a{color:var(--green-dark)}
+  .wrap{max-width:680px; margin:0 auto; padding:0 20px}
+
+  header{
+    background:var(--surface); border-bottom:1px solid var(--line);
+    padding:14px 0;
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-weight:700; font-size:19px; letter-spacing:-.01em}
+  .brand .tick{
+    width:26px; height:26px; border-radius:7px; background:var(--green);
+    display:grid; place-items:center; color:#fff; font-size:15px; flex:none;
+  }
+
+  .hero{padding:56px 0 40px; text-align:center}
+  .hero h1{
+    font-size:clamp(30px,7vw,44px); line-height:1.12; letter-spacing:-.02em;
+    margin:0 0 14px;
+  }
+  .hero p.lead{font-size:clamp(17px,3.6vw,20px); color:var(--muted); margin:0 auto; max-width:30ch}
+
+  /* Signatur: kleine Häkchen-Liste aus der App-Welt */
+  .list-card{
+    margin:34px auto 0; max-width:320px; text-align:left;
+    background:#fff; border:1px solid var(--line); border-radius:16px;
+    box-shadow:0 6px 24px rgba(27,94,32,.07); overflow:hidden;
+  }
+  .list-card .head{
+    background:var(--green); color:#fff; font-weight:600; font-size:14px;
+    padding:10px 16px; display:flex; align-items:center; gap:8px;
+  }
+  .list-card ul{list-style:none; margin:0; padding:6px 0}
+  .list-card li{
+    display:flex; align-items:center; gap:12px; padding:9px 16px; font-size:15px;
+  }
+  .list-card li + li{border-top:1px solid #F0F4EE}
+  .dot{width:16px;height:16px;border-radius:50%;flex:none;display:grid;place-items:center;color:#fff;font-size:10px;font-weight:700}
+  .done{color:var(--muted); text-decoration:line-through}
+
+  .badge{
+    display:inline-block; margin:38px 0 0; padding:11px 20px; border-radius:999px;
+    background:#EAF0E8; color:var(--muted); font-weight:600; font-size:14px;
+    border:1px solid var(--line);
+  }
+
+  section.features{padding:20px 0 8px}
+  .features h2{font-size:14px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:0 0 18px}
+  .feat{display:flex; gap:14px; padding:14px 0; border-top:1px solid var(--line)}
+  .feat .ic{
+    width:34px;height:34px;border-radius:9px;background:var(--surface);color:var(--green);
+    display:grid;place-items:center;flex:none;font-size:17px;border:1px solid var(--line)
+  }
+  .feat h3{margin:2px 0 3px; font-size:16px}
+  .feat p{margin:0; color:var(--muted); font-size:15px}
+
+  footer{
+    margin-top:48px; border-top:1px solid var(--line); background:var(--surface);
+    padding:26px 0; font-size:14px; color:var(--muted);
+  }
+  footer .links{display:flex; flex-wrap:wrap; gap:6px 18px; margin-bottom:10px}
+  footer a{text-decoration:none; font-weight:600}
+  footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap brand">
+      <span class="tick" aria-hidden="true">&#10003;</span>
+      Listikus
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="hero">
+      <h1>Die clevere Einkaufsliste für die ganze Familie</h1>
+      <p class="lead">Eine gemeinsame Liste, die für alle in Echtzeit aktuell ist.</p>
+
+      <div class="list-card" role="img" aria-label="Beispiel einer Einkaufsliste">
+        <div class="head"><span aria-hidden="true">&#128722;</span> Wocheneinkauf</div>
+        <ul>
+          <li><span class="dot" style="background:#1E88E5" aria-hidden="true">A</span> Milch</li>
+          <li><span class="dot" style="background:#D81B60" aria-hidden="true">D</span> Brot</li>
+          <li class="done"><span class="dot" style="background:#8E24AA" aria-hidden="true">&#10003;</span> Äpfel</li>
+          <li><span class="dot" style="background:#00897B" aria-hidden="true">A</span> Kaffee</li>
+        </ul>
+      </div>
+
+      <div class="badge">Bald im Google&nbsp;Play&nbsp;Store</div>
+    </div>
+
+    <section class="features">
+      <h2>Was Listikus kann</h2>
+
+      <div class="feat">
+        <div class="ic" aria-hidden="true">&#128101;</div>
+        <div>
+          <h3>Gemeinsam statt doppelt</h3>
+          <p>Alle im Haushalt sehen dieselbe Liste – Änderungen erscheinen sofort bei allen.</p>
+        </div>
+      </div>
+
+      <div class="feat">
+        <div class="ic" aria-hidden="true">&#10024;</div>
+        <div>
+          <h3>Import per KI</h3>
+          <p>Rezept oder Foto rein – Listikus erkennt die Produkte und trägt sie ein.</p>
+        </div>
+      </div>
+
+      <div class="feat">
+        <div class="ic" aria-hidden="true">&#127912;</div>
+        <div>
+          <h3>Farbe pro Person</h3>
+          <p>Ein farbiger Punkt zeigt, wer ein Produkt hinzugefügt oder geändert hat.</p>
+        </div>
+      </div>
+
+      <div class="feat">
+        <div class="ic" aria-hidden="true">&#128260;</div>
+        <div>
+          <h3>Häufig Gekauftes</h3>
+          <p>Was regelmäßig auf der Liste steht, ist mit einem Tipp wieder da.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="links">
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="mailto:listikus.einkaufsliste@gmail.com">Kontakt</a>
+      </div>
+      &copy; 2026 Listikus
+    </div>
+  </footer>
+</body>
+</html>
