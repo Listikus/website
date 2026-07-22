@@ -162,6 +162,24 @@
   .cta-btn svg{width:20px;height:20px}
   @media(max-width:760px){.cta-card{grid-template-columns:1fr; text-align:center; gap:24px; padding:32px 24px} .cta-body p{margin-left:auto;margin-right:auto}}
 
+  /* Feature-Karten mit Screenshot + Lightbox */
+  .pcard{background:#fff;border:1.5px solid var(--green);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:15px}
+  .pcard .phead{display:flex;align-items:center;gap:12px}
+  .pcard .phead .ic{width:42px;height:42px;border-radius:11px;background:var(--mint);color:var(--green);display:grid;place-items:center;flex:none}
+  .pcard .phead .ic svg{width:22px;height:22px}
+  .pcard .phead h3{font-size:18px}
+  .pcard .phone{position:relative;display:block;width:100%;border:0;padding:9px;background:#12241a;border-radius:26px;cursor:zoom-in;box-shadow:0 16px 34px -20px rgba(18,62,23,.5)}
+  .pcard .phone .notch{position:absolute;top:15px;left:50%;transform:translateX(-50%);width:46px;height:6px;border-radius:6px;background:#0c1a12;z-index:2}
+  .pcard .phone .scr{display:block;border-radius:18px;overflow:hidden;max-height:300px}
+  .pcard .phone .scr img{width:100%;display:block;transition:transform .25s ease}
+  .pcard .phone .zoom{position:absolute;right:16px;bottom:14px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--green-dark);display:grid;place-items:center;box-shadow:0 4px 10px -3px rgba(0,0,0,.4)}
+  .pcard .phone .zoom svg{width:18px;height:18px}
+  .pcard .phone:hover .scr img{transform:scale(1.03)}
+  .pcard p{color:var(--muted);font-size:14.5px;margin:0}
+  .lb{position:fixed;inset:0;background:rgba(10,20,12,.82);display:none;align-items:center;justify-content:center;z-index:100;padding:24px;cursor:zoom-out}
+  .lb.open{display:flex}
+  .lb img{max-height:90vh;max-width:94vw;border-radius:22px;box-shadow:0 30px 80px -20px rgba(0,0,0,.7)}
+  .lb .x{position:absolute;top:20px;right:24px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;border:0;font-size:24px;line-height:1;cursor:pointer}
   @media(prefers-reduced-motion:reduce){*{transition:none!important; scroll-behavior:auto}}
 </style>
 </head>
@@ -220,12 +238,36 @@
 <section id="features" class="features">
   <div class="wrap">
     <div class="grid">
-      <div class="fcard"><div class="fhead"><span class="ic"><svg><use href="#i-wand"/></svg></span><h3>Clever erfassen</h3></div><p>Foto, Sprache oder Text &ndash; Listikus erkennt Deine Produkte.</p></div>
-      <div class="fcard"><div class="fhead"><span class="ic"><svg><use href="#i-noads"/></svg></span><h3>Keine Werbung</h3></div><p>Keine Banner, keine gesponserten Produkte. Nur deine Liste.</p></div>
-      <div class="fcard"><div class="fhead"><span class="ic"><svg><use href="#i-palette"/></svg></span><h3>Farbe pro Person</h3></div><p>Jedes Mitglied hat seine Farbe &ndash; der Punkt am Produkt zeigt, wer es eingetragen hat.</p></div>
-      <div class="fcard"><div class="fhead"><span class="ic"><svg><use href="#i-sync"/></svg></span><h3>Immer aktuell</h3></div><p>Änderungen in Echtzeit bei allen &ndash; und offline geht nichts verloren.</p></div>
-      <div class="fcard"><div class="fhead"><span class="ic"><svg><use href="#i-repeat"/></svg></span><h3>Häufig Gekauftes</h3></div><p>Was oft auf der Liste steht, ist mit einem Tipp wieder da.</p></div>
-      <div class="fcard"><div class="fhead"><span class="ic"><svg><use href="#i-users"/></svg></span><h3>Echter Haushalt</h3></div><p>Mitglieder einladen, Rollen vergeben, jederzeit beitreten oder verlassen.</p></div>
+      <article class="pcard">
+        <div class="phead"><span class="ic"><svg><use href="#i-palette"/></svg></span><h3>Farbe pro Person</h3></div>
+        <button class="phone" type="button" onclick="openLB(this)"><span class="notch"></span><span class="scr"><img src="img/hero_liste.png" alt="App-Screenshot"></span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>
+        <p>Jedes Mitglied hat seine Farbe &ndash; der Punkt am Produkt zeigt sofort, wer es eingetragen hat.</p>
+      </article>
+      <article class="pcard">
+        <div class="phead"><span class="ic"><svg><use href="#i-palette"/></svg></span><h3>Farbe pro Person</h3></div>
+        <button class="phone" type="button" onclick="openLB(this)"><span class="notch"></span><span class="scr"><img src="img/hero_liste.png" alt="App-Screenshot"></span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>
+        <p>Jedes Mitglied hat seine Farbe &ndash; der Punkt am Produkt zeigt sofort, wer es eingetragen hat.</p>
+      </article>
+      <article class="pcard">
+        <div class="phead"><span class="ic"><svg><use href="#i-palette"/></svg></span><h3>Farbe pro Person</h3></div>
+        <button class="phone" type="button" onclick="openLB(this)"><span class="notch"></span><span class="scr"><img src="img/hero_liste.png" alt="App-Screenshot"></span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>
+        <p>Jedes Mitglied hat seine Farbe &ndash; der Punkt am Produkt zeigt sofort, wer es eingetragen hat.</p>
+      </article>
+      <article class="pcard">
+        <div class="phead"><span class="ic"><svg><use href="#i-palette"/></svg></span><h3>Farbe pro Person</h3></div>
+        <button class="phone" type="button" onclick="openLB(this)"><span class="notch"></span><span class="scr"><img src="img/hero_liste.png" alt="App-Screenshot"></span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>
+        <p>Jedes Mitglied hat seine Farbe &ndash; der Punkt am Produkt zeigt sofort, wer es eingetragen hat.</p>
+      </article>
+      <article class="pcard">
+        <div class="phead"><span class="ic"><svg><use href="#i-palette"/></svg></span><h3>Farbe pro Person</h3></div>
+        <button class="phone" type="button" onclick="openLB(this)"><span class="notch"></span><span class="scr"><img src="img/hero_liste.png" alt="App-Screenshot"></span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>
+        <p>Jedes Mitglied hat seine Farbe &ndash; der Punkt am Produkt zeigt sofort, wer es eingetragen hat.</p>
+      </article>
+      <article class="pcard">
+        <div class="phead"><span class="ic"><svg><use href="#i-palette"/></svg></span><h3>Farbe pro Person</h3></div>
+        <button class="phone" type="button" onclick="openLB(this)"><span class="notch"></span><span class="scr"><img src="img/hero_liste.png" alt="App-Screenshot"></span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>
+        <p>Jedes Mitglied hat seine Farbe &ndash; der Punkt am Produkt zeigt sofort, wer es eingetragen hat.</p>
+      </article>
     </div>
 
   </div>
@@ -284,5 +326,15 @@
   </div>
 </footer>
 
+
+<div class="lb" id="lb" onclick="closeLB(event)">
+  <button class="x" onclick="closeLB(event)" aria-label="Schließen">&times;</button>
+  <img id="lbimg" src="" alt="Screenshot groß">
+</div>
+<script>
+  function openLB(btn){var img=btn.querySelector('img');document.getElementById('lbimg').src=img.src;document.getElementById('lb').classList.add('open');}
+  function closeLB(e){e.stopPropagation();document.getElementById('lb').classList.remove('open');}
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')document.getElementById('lb').classList.remove('open');});
+</script>
 </body>
 </html>
