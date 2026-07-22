@@ -66,7 +66,7 @@
   .hero h1 .sub{display:block; font-size:clamp(18px,3vw,26px); font-weight:600; color:var(--green-dark); margin-top:8px; letter-spacing:-.01em}
   .hero p.lead{font-size:clamp(16px,2.3vw,19px); color:var(--muted); max-width:38ch; margin:18px 0 0}
   .mini-feats{display:flex; flex-direction:column; gap:15px; margin:24px 0 0}
-  .mf{display:flex; align-items:flex-start; gap:13px; text-align:left}
+  .mf{display:flex; align-items:flex-start; gap:13px; text-align:left; background:rgba(255,255,255,.72); border:1px solid var(--line); border-radius:14px; padding:13px 15px; box-shadow:0 6px 16px -14px rgba(18,62,23,.5)}
   .mf-ic{width:40px;height:40px;border-radius:50%;background:var(--mint);display:grid;place-items:center;flex:none;color:var(--green)}
   .mf-ic svg{width:20px;height:20px}
   .mf b{display:block; font-family:var(--disp); font-weight:700; font-size:16px; color:var(--ink); letter-spacing:-.01em}
@@ -152,12 +152,9 @@
 
   /* Finale CTA */
   .cta{padding:66px 0}
-  .cta-card{display:grid; grid-template-columns:auto 1fr; gap:38px; align-items:center; background:var(--mint-2); border:1px solid var(--line); border-radius:26px; padding:40px 46px}
+  .cta-card{display:grid; grid-template-columns:0.85fr 1.15fr; gap:30px; align-items:center; background:var(--mint-2); border:1px solid var(--line); border-radius:26px; padding:40px 48px}
   .cta-art{display:flex; justify-content:center}
-  .basket{position:relative; width:134px; height:134px; border-radius:50%; background:linear-gradient(155deg,#E7F3E4,#CFE8CB); display:grid; place-items:center; color:var(--green)}
-  .basket>svg{width:66px;height:66px}
-  .basket .chk{position:absolute; right:4px; bottom:4px; width:40px;height:40px;border-radius:50%;background:var(--green);display:grid;place-items:center;box-shadow:0 8px 16px -7px rgba(46,125,50,.85)}
-  .basket .chk svg{width:20px;height:20px;color:#fff}
+  .cta-illu{width:100%; max-width:250px; height:auto; display:block; margin:0 auto}
   .cta-body h2{font-size:clamp(26px,4.4vw,38px); line-height:1.1}
   .cta-body p{color:var(--muted); font-size:17px; margin:12px 0 0; max-width:44ch}
   .cta-btn{display:inline-flex; align-items:center; gap:10px; margin-top:22px; background:var(--green); color:#fff; text-decoration:none; font-family:var(--disp); font-weight:700; font-size:16px; padding:14px 26px; border-radius:14px; box-shadow:var(--shadow-sm)}
@@ -231,10 +228,6 @@
       <div class="fcard"><div class="fhead"><span class="ic"><svg><use href="#i-users"/></svg></span><h3>Echter Haushalt</h3></div><p>Mitglieder einladen, Rollen vergeben, jederzeit beitreten oder verlassen.</p></div>
     </div>
 
-    <div class="trust">
-      <span><svg><use href="#i-shield"/></svg> Daten auf Servern in der EU</span>
-      <span><svg><use href="#i-shield"/></svg> Konto jederzeit selbst löschbar</span>
-    </div>
   </div>
 </section>
 
@@ -243,7 +236,32 @@
   <div class="wrap">
     <div class="cta-card">
       <div class="cta-art">
-        <div class="basket"><svg><use href="#i-basket"/></svg><span class="chk"><svg><use href="#i-check"/></svg></span></div>
+        <svg class="cta-illu" viewBox="0 0 240 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Einkaufskorb mit Lebensmitteln">
+          <circle cx="120" cy="108" r="96" fill="#EAF4E9"/>
+          <path d="M40 46c-3-5-11-3-11 3 0 5 11 11 11 11s11-6 11-11c0-6-8-8-11-3z" fill="#C8E6C9"/>
+          <path d="M206 62c-2-4-9-2-9 2 0 4 9 8 9 8s9-4 9-8c0-4-7-6-9-2z" fill="#C8E6C9"/>
+          <path d="M74 114 Q120 34 166 114" fill="none" stroke="#37474F" stroke-width="7" stroke-linecap="round"/>
+          <g transform="rotate(-32 86 76)">
+            <rect x="52" y="66" width="82" height="20" rx="10" fill="#E3B877" stroke="#C99A55" stroke-width="2"/>
+            <path d="M70 72l4 8M82 70l4 8M94 70l4 8M106 70l4 8" stroke="#C99A55" stroke-width="2" stroke-linecap="round"/>
+          </g>
+          <g>
+            <circle cx="151" cy="72" r="13" fill="#66BB6A"/>
+            <circle cx="165" cy="77" r="11" fill="#4CAF50"/>
+            <circle cx="159" cy="61" r="10" fill="#81C784"/>
+            <rect x="154" y="82" width="6" height="18" rx="3" fill="#A5D6A7"/>
+          </g>
+          <g>
+            <rect x="104" y="56" width="26" height="56" rx="9" fill="#CDE8FB" stroke="#9CCDF0" stroke-width="2"/>
+            <rect x="110" y="44" width="14" height="14" rx="4" fill="#9CCDF0"/>
+            <rect x="102" y="80" width="30" height="12" fill="#ffffff" opacity="0.75"/>
+          </g>
+          <ellipse cx="120" cy="114" rx="80" ry="16" fill="#388E3C"/>
+          <path d="M46 114 L62 188 a8 8 0 0 0 8 6 h100 a8 8 0 0 0 8-6 L194 114 Z" fill="#2E7D32"/>
+          <path d="M70 118 L78 192 M96 118 L100 194 M120 118 L120 194 M144 118 L140 192 M170 118 L162 192" stroke="#43A047" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+          <path d="M52 136 h136 M58 164 h124" stroke="#43A047" stroke-width="4" opacity="0.7"/>
+          <rect x="42" y="106" width="156" height="18" rx="9" fill="#43A047"/>
+        </svg>
       </div>
       <div class="cta-body">
         <h2>Schon bald<br>im Google Play Store.</h2>
