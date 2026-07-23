@@ -139,6 +139,7 @@
   .foot{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap}
   .foot .links{display:flex; gap:22px}
   .foot a{color:var(--muted); text-decoration:none; font-weight:600}
+  .foot a.brand{color:var(--ink); font-weight:800; font-size:20px; font-family:var(--disp)}
   .foot a:hover{color:var(--ink)}
 
   /* Feature-Karten: Icon + Titel in einer Zeile, Rahmen wie Keine Werbung */
@@ -150,7 +151,7 @@
   .fcard p{color:var(--muted); font-size:14.5px; margin:0; line-height:1.55}
 
   /* Finale CTA */
-  .cta{padding:66px 0}
+  .cta{padding:0 0 66px}
   .cta-card{display:grid; grid-template-columns:0.85fr 1.15fr; gap:30px; align-items:center; background:var(--mint-2); border:1px solid var(--line); border-radius:26px; padding:40px 48px}
   .cta-art{display:flex; justify-content:center}
   .cta-illu{width:100%; max-width:250px; height:auto; display:block; margin:0 auto}
@@ -167,9 +168,9 @@
   .pcard .phead .ic{width:42px;height:42px;border-radius:11px;background:var(--mint);color:var(--green);display:grid;place-items:center;flex:none}
   .pcard .phead .ic svg{width:22px;height:22px}
   .pcard .phead h3{font-size:18px}
-  .pcard .phone{position:relative;display:block;width:100%;border:0;padding:9px;background:#12241a;border-radius:26px;cursor:zoom-in;box-shadow:0 16px 34px -20px rgba(18,62,23,.5)}
-  .pcard .phone .notch{position:absolute;top:15px;left:50%;transform:translateX(-50%);width:46px;height:6px;border-radius:6px;background:#0c1a12;z-index:2}
-  .pcard .phone .scr{display:block;border-radius:18px;overflow:hidden;max-height:340px}
+  .pcard .phone{position:relative;display:block;width:100%;border:0;padding:5px;background:#12241a;border-radius:22px;cursor:zoom-in;box-shadow:0 16px 34px -20px rgba(18,62,23,.5)}
+  .pcard .phone .notch{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:46px;height:6px;border-radius:6px;background:#0c1a12;z-index:2}
+  .pcard .phone .scr{display:block;border-radius:17px;overflow:hidden;max-height:340px}
   .pcard .phone .scr img{width:100%;display:block;transition:transform .25s ease}
   .pcard .phone .zoom{position:absolute;right:16px;bottom:14px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--green-dark);display:grid;place-items:center;box-shadow:0 4px 10px -3px rgba(0,0,0,.4)}
   .pcard .phone .zoom svg{width:18px;height:18px}
