@@ -177,11 +177,82 @@
   .pcard .phone:hover .scr img{transform:scale(1.03)}
   .pcard p{color:var(--muted);font-size:14.5px;margin:0}
   .shots-note{text-align:center; color:var(--muted); font-size:13.5px; margin:30px auto 0}
+  /* Preis-Abschnitt */
+  .pricing{position:relative; padding:34px 0 66px; overflow:hidden}
+  .pricing .wrap{position:relative; z-index:1}
+  .pricing-bg{position:absolute; inset:0; z-index:0}
+  .pricing-bg::before{content:""; position:absolute; inset:0; background:
+     radial-gradient(65% 55% at 82% 12%, rgba(46,125,50,.16), transparent 68%),
+     radial-gradient(55% 50% at 8% 92%, rgba(0,137,123,.13), transparent 68%),
+     linear-gradient(165deg,#DCEEDA 0%,#CBE5C8 58%,#BFDFBC 100%)}
+  .pricing-bg::after{content:""; position:absolute; inset:0; opacity:.45;
+     background-image:radial-gradient(rgba(255,255,255,.55) 1px, transparent 1.4px);
+     background-size:22px 22px}
+  .phead-block{text-align:left; max-width:790px; margin:0 auto 26px}
+  .phead-block h2{font-size:clamp(26px,4.4vw,38px)}
+  .phead-block p{color:var(--muted); font-size:17px; margin:13px 0 0}
+  .phead-block p strong{color:var(--ink)}
+
+  .trial{display:flex; align-items:center; gap:16px; max-width:520px; margin:0 auto 26px;
+         background:#fff; border:1px solid var(--line); border-radius:18px; padding:18px 24px}
+  .trial .tic{width:48px;height:48px;border-radius:50%;background:var(--green);display:grid;place-items:center;flex:none;
+              box-shadow:0 8px 18px -8px rgba(46,125,50,.8)}
+  .trial .tic svg{width:24px;height:24px;color:#fff}
+  .trial b{display:block; font-family:var(--disp); font-size:18px}
+  .trial span{color:var(--muted); font-size:14.5px}
+
+  .plans{display:grid; grid-template-columns:1fr 1fr; gap:26px; max-width:790px; margin:0 auto}
+  @media(max-width:760px){.plans{grid-template-columns:1fr; max-width:420px}}
+  .pplan{background:#fff; border:1.5px solid var(--green); border-radius:20px; padding:26px 24px}
+  .pplan.alt{background:linear-gradient(170deg,#C7E4C3 0%,#DFF0DD 45%,#EFF7EE 100%)}
+  .pplan.alt .prow{border-color:rgba(27,94,32,.22)}
+  .pplan-head{display:flex; align-items:center; gap:14px}
+  .pplan .pic{width:46px;height:46px;border-radius:12px;background:var(--mint-2);border:1px solid var(--line);
+              display:flex;align-items:center;justify-content:center;gap:2px;flex:none;padding:0 4px;flex-wrap:wrap}
+  .pplan.alt .pic{background:#fff}
+  .pplan .pic .dot{width:8px;height:8px;border-radius:50%;display:block}
+  .pplan h3{font-size:19px}
+  .pplan .pmeta{color:var(--green-dark); font-size:14px; font-weight:600}
+
+  .prow{display:flex; align-items:center; justify-content:center; gap:14px; margin:22px 0 18px;
+        border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:20px 0}
+  .pcol{text-align:center; position:relative; flex:1}
+  .pcol b{display:block; font-family:var(--disp); font-size:clamp(24px,3.4vw,30px); letter-spacing:-.02em; line-height:1.1}
+  .pcol span{display:block; color:var(--muted); font-size:13px; margin-top:3px}
+  .pcol .save{display:inline-block; background:var(--green); color:#fff; font-size:9px; font-weight:600;
+              letter-spacing:.02em; text-transform:uppercase; padding:2px 8px; border-radius:999px;
+              margin:0 0 7px; white-space:nowrap; line-height:1.5}
+  .por{color:var(--muted); font-size:12.5px; border:1px solid var(--line); background:#fff;
+       border-radius:999px; padding:4px 10px; flex:none; align-self:center}
+
+  .save.ghost{visibility:hidden}
+  .pfeat{list-style:none; margin:0; padding:0; display:flex; gap:8px 22px; flex-wrap:wrap; justify-content:center}
+  .pfeat li{display:inline-flex; align-items:center; gap:7px; font-size:14.5px; font-weight:500}
+  .pfeat svg{width:15px;height:15px;color:var(--green)}
+
+  .platforms{display:grid; grid-template-columns:1fr 1fr; gap:0; max-width:790px; margin:26px auto 0;
+             background:#fff; border:1px solid var(--line); border-radius:18px; overflow:hidden}
+  @media(max-width:760px){.platforms{grid-template-columns:1fr; max-width:420px}}
+  .pf{display:flex; gap:14px; padding:22px 24px}
+  .pf + .pf{border-left:1px solid var(--line)}
+  @media(max-width:760px){.pf + .pf{border-left:0; border-top:1px solid var(--line)}}
+  .pf .pfic{width:42px;height:42px;border-radius:11px;background:var(--mint);color:var(--green);
+            display:grid;place-items:center;flex:none}
+  .pf .pfic svg{width:21px;height:21px}
+  .pf b{display:block; font-family:var(--disp); font-size:16px}
+  .pf span{color:var(--muted); font-size:14px}
+
+  .pnote{text-align:center; color:var(--muted); font-size:12.5px; margin:20px auto 0; opacity:.85}
   .lb{position:fixed;inset:0;background:rgba(10,20,12,.82);display:none;align-items:center;justify-content:center;z-index:100;padding:24px;cursor:zoom-out}
   .lb.open{display:flex}
   .lb img{max-height:90vh;max-width:94vw;border-radius:22px;box-shadow:0 30px 80px -20px rgba(0,0,0,.7)}
   .lb .x{position:absolute;top:20px;right:24px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;border:0;font-size:24px;line-height:1;cursor:pointer}
   @media(prefers-reduced-motion:reduce){*{transition:none!important; scroll-behavior:auto}}
+
+  html,body{min-height:100%}
+  body{min-height:100vh;display:flex;flex-direction:column}
+  main{flex:1 0 auto}
+  footer{margin-top:auto}
 </style>
 </head>
 <body>
@@ -198,6 +269,9 @@
   <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
   <symbol id="i-lists" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="15" rx="2.5"/><path d="M7 2.6h9.5A2.5 2.5 0 0 1 19 5.1v12"/><path d="M6.6 11h6.8M6.6 15h4.4"/></symbol>
   <symbol id="i-flame" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M13.4 1.6c.5 3-1 4.5-2.6 6C9 9.3 7.2 11 7.2 14a6.4 6.4 0 0 0 12.8 0c0-3.2-1.7-5.3-3.2-7.1-.4 1-1 1.7-1.8 2.2.4-2.9-.3-5.6-1.6-7.5z"/><path d="M11.6 14.6c-.9 1-1.5 1.9-1.5 3.1a3 3 0 0 0 6 0c0-1.6-1-2.6-2-3.6-.3.6-.7 1-1.2 1.3.1-.9-.5-1.7-1.3-2.3-.2.6 0 1.1 0 1.5z" fill="#EAF4E9" opacity=".75"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="9.5" width="19" height="4.5" rx="1.2"/><path d="M4.3 14v6.3a1.2 1.2 0 0 0 1.2 1.2h13a1.2 1.2 0 0 0 1.2-1.2V14"/><line x1="12" y1="9.5" x2="12" y2="21.5"/><path d="M12 9.5H7.6a2.55 2.55 0 1 1 0-5.1C11.1 4.4 12 9.5 12 9.5z"/><path d="M12 9.5h4.4a2.55 2.55 0 1 0 0-5.1C12.9 4.4 12 9.5 12 9.5z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.6"/><line x1="10.6" y1="18.4" x2="13.4" y2="18.4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.3l3.4 2"/></symbol>
   <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4.5 4.5L19 7"/></symbol>
   <symbol id="i-basket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l-1.3 9.2a2 2 0 0 1-2 1.8H7.3a2 2 0 0 1-2-1.8L4 9z"/><path d="M8.5 9 12 3l3.5 6"/><path d="M9.5 13v3.2M14.5 13v3.2"/></symbol>
@@ -264,6 +338,72 @@
     </div>
 
     <p class="shots-note">Alle Abbildungen zeigen die tats&auml;chliche Darstellung direkt aus Listikus.</p>
+  </div>
+</section>
+
+
+<!-- PREISE -->
+<section class="pricing">
+  <div class="pricing-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="panel">
+    <div class="phead-block">
+      <span class="eyebrow">Transparent und fair</span>
+      <h2>Ein Preis f&uuml;r den ganzen Haushalt</h2>
+      <p><strong>Nur der Administrator zahlt.</strong><br>Alle anderen im Haushalt nutzen Listikus kostenlos.</p>
+    </div>
+
+    <div class="trial">
+      <span class="tic"><svg><use href="#i-gift"/></svg></span>
+      <div><b>4 Wochen kostenlos testen</b><span>Alle Funktionen. Ohne Einschr&auml;nkungen.</span></div>
+    </div>
+
+    <div class="plans">
+      <div class="pplan">
+        <div class="pplan-head">
+          <span class="pic"><span class="dot" style="background:#1E88E5"></span><span class="dot" style="background:#D81B60"></span><span class="dot" style="background:#FB8C00"></span></span>
+          <div><h3>Kleiner Haushalt</h3><span class="pmeta">Bis zu 3 Personen</span></div>
+        </div>
+        <div class="prow">
+          <div class="pcol"><span class="save ghost">2 Monate gespart</span><b>1,50&nbsp;&euro;</b><span>pro Monat</span></div>
+          <span class="por">oder</span>
+          <div class="pcol"><span class="save">2 Monate gespart</span><b>15,00&nbsp;&euro;</b><span>pro Jahr</span></div>
+        </div>
+        <ul class="pfeat">
+          <li><svg><use href="#i-check"/></svg> Alle Funktionen</li>
+          <li><svg><use href="#i-check"/></svg> Jederzeit k&uuml;ndbar</li>
+        </ul>
+      </div>
+      <div class="pplan alt">
+        <div class="pplan-head">
+          <span class="pic"><span class="dot" style="background:#1E88E5"></span><span class="dot" style="background:#D81B60"></span><span class="dot" style="background:#FB8C00"></span><span class="dot" style="background:#8E24AA"></span><span class="dot" style="background:#00897B"></span><span class="dot" style="background:#E53935"></span></span>
+          <div><h3>Gro&szlig;er Haushalt</h3><span class="pmeta">Bis zu 6 Personen</span></div>
+        </div>
+        <div class="prow">
+          <div class="pcol"><span class="save ghost">2 Monate gespart</span><b>3,00&nbsp;&euro;</b><span>pro Monat</span></div>
+          <span class="por">oder</span>
+          <div class="pcol"><span class="save">2 Monate gespart</span><b>30,00&nbsp;&euro;</b><span>pro Jahr</span></div>
+        </div>
+        <ul class="pfeat">
+          <li><svg><use href="#i-check"/></svg> Alle Funktionen</li>
+          <li><svg><use href="#i-check"/></svg> Jederzeit k&uuml;ndbar</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="platforms">
+      <div class="pf">
+        <span class="pfic"><svg><use href="#i-phone"/></svg></span>
+        <div><b>Android zuerst</b><span>Listikus kommt bald f&uuml;r Android.</span></div>
+      </div>
+      <div class="pf">
+        <span class="pfic"><svg><use href="#i-clock"/></svg></span>
+        <div><b>iOS geplant</b><span>Eine iOS-Version ist in Planung.</span></div>
+      </div>
+    </div>
+
+    <p class="pnote">Geplante Preise, &Auml;nderungen vorbehalten. Alle Preise inkl.&nbsp;MwSt.</p>
+    </div>
   </div>
 </section>
 
