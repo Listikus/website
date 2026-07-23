@@ -66,7 +66,7 @@
   .hero h1 .sub{display:block; font-size:clamp(18px,3vw,26px); font-weight:600; color:var(--green-dark); margin-top:8px; letter-spacing:-.01em}
   .hero p.lead{font-size:clamp(16px,2.3vw,19px); color:var(--muted); max-width:38ch; margin:18px 0 0}
   .mini-feats{display:flex; flex-direction:column; gap:15px; margin:24px 0 0}
-  .mf{display:flex; align-items:flex-start; gap:13px; text-align:left; background:rgba(255,255,255,.72); border:1px solid var(--line); border-radius:14px; padding:13px 15px; box-shadow:0 6px 16px -14px rgba(18,62,23,.5)}
+  .mf{display:flex; align-items:center; gap:13px; text-align:left; background:#fff; border:1px solid var(--line); border-radius:14px; padding:13px 15px; box-shadow:0 6px 16px -14px rgba(18,62,23,.5)}
   .mf-ic{width:40px;height:40px;border-radius:50%;background:var(--mint);display:grid;place-items:center;flex:none;color:var(--green)}
   .mf-ic svg{width:20px;height:20px}
   .mf b{display:block; font-family:var(--disp); font-weight:700; font-size:16px; color:var(--ink); letter-spacing:-.01em}
@@ -98,9 +98,8 @@
   .sec-head h2{font-size:clamp(26px,4.4vw,38px)}
   .sec-head p{color:var(--muted); font-size:17px; margin:14px 0 0}
 
-  .features .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
-  @media(max-width:920px){.features .grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:600px){.features .grid{grid-template-columns:1fr}}
+  .features .grid{display:grid; grid-template-columns:repeat(2,1fr); gap:56px; max-width:790px; margin:0 auto}
+  @media(max-width:760px){.features .grid{grid-template-columns:1fr; gap:34px; max-width:360px}}
 
   .card{background:#fff; border:1px solid var(--line); border-radius:20px; overflow:hidden; display:flex; flex-direction:column; box-shadow:var(--shadow-sm); transition:transform .18s ease}
   .card:hover{transform:translateY(-4px)}
@@ -170,7 +169,7 @@
   .pcard .phead h3{font-size:18px}
   .pcard .phone{position:relative;display:block;width:100%;border:0;padding:9px;background:#12241a;border-radius:26px;cursor:zoom-in;box-shadow:0 16px 34px -20px rgba(18,62,23,.5)}
   .pcard .phone .notch{position:absolute;top:15px;left:50%;transform:translateX(-50%);width:46px;height:6px;border-radius:6px;background:#0c1a12;z-index:2}
-  .pcard .phone .scr{display:block;border-radius:18px;overflow:hidden;max-height:300px}
+  .pcard .phone .scr{display:block;border-radius:18px;overflow:hidden;max-height:340px}
   .pcard .phone .scr img{width:100%;display:block;transition:transform .25s ease}
   .pcard .phone .zoom{position:absolute;right:16px;bottom:14px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--green-dark);display:grid;place-items:center;box-shadow:0 4px 10px -3px rgba(0,0,0,.4)}
   .pcard .phone .zoom svg{width:18px;height:18px}
@@ -189,7 +188,7 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></symbol>
   <symbol id="i-noads" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="5.6" y1="5.6" x2="18.4" y2="18.4"/></symbol>
-  <symbol id="i-wand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4.5" y1="19.5" x2="14.5" y2="9.5"/><path d="M18 2.5 L19.5 5.9 L23 7.5 L19.5 9.1 L18 12.5 L16.5 9.1 L13 7.5 L16.5 5.9 Z" fill="currentColor" stroke="none"/><path d="M6.5 3.5v2.2M5.4 4.6h2.2" stroke-width="1.6"/></symbol>
+  <symbol id="i-wand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3.8" y1="20.2" x2="13.6" y2="10.4"/><path d="M19.2 2.6000000000000005 L20.58 5.82 L23.799999999999997 7.2 L20.58 8.58 L19.2 11.8 L17.82 8.58 L14.6 7.2 L17.82 5.82 Z" fill="currentColor" stroke="none"/><path d="M9.6 1.5000000000000004 L10.469999999999999 3.5300000000000002 L12.5 4.4 L10.469999999999999 5.2700000000000005 L9.6 7.300000000000001 L8.73 5.2700000000000005 L6.699999999999999 4.4 L8.73 3.5300000000000002 Z" fill="currentColor" stroke="none"/></symbol>
   <symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2a10 10 0 1 0 0 20 2 2 0 0 0 2-2 2 2 0 0 1 2-2h1a5 5 0 0 0 5-5 10 10 0 0 0-10-9z"/></symbol>
   <symbol id="i-sync" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></symbol>
   <symbol id="i-repeat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></symbol>
@@ -216,7 +215,7 @@
         <div class="hero-copy">
           <span class="eyebrow">Für Familien &amp; WG<span class="lc">s</span></span>
           <h1>Listikus<span class="sub">die clevere Einkaufsliste</span></h1>
-          <div class="mini-feats"><div class="mf"><span class="mf-ic"><svg><use href="#i-noads"/></svg></span><div><b>Ohne Werbung</b><span>Keine Banner, kein Tracking. Nur deine Liste.</span></div></div><div class="mf"><span class="mf-ic"><svg><use href="#i-sync"/></svg></span><div><b>Immer aktuell</b><span>Änderungen erscheinen in Echtzeit bei allen.</span></div></div><div class="mf"><span class="mf-ic"><svg><use href="#i-wand"/></svg></span><div><b>Clever erfassen</b><span>Foto, Sprache oder Text &ndash; Listikus erkennt Deine Produkte.</span></div></div></div>
+          <div class="mini-feats"><div class="mf"><span class="mf-ic"><svg><use href="#i-noads"/></svg></span><div><b>Ohne Werbung</b><span>Keine Banner, kein Tracking. Nur deine Liste.</span></div></div><div class="mf"><span class="mf-ic"><svg><use href="#i-sync"/></svg></span><div><b>Immer aktuell</b><span>Änderungen erscheinen in Echtzeit bei allen.</span></div></div><div class="mf"><span class="mf-ic"><svg><use href="#i-wand"/></svg></span><div><b>Clever erfassen</b><span>Text, Foto, Sprache &ndash; Listikus erkennt Deine Produkte.</span></div></div></div>
           <div class="hero-cta">
             <span class="playbadge" role="text">
               <svg><use href="#i-play"/></svg>
@@ -238,16 +237,6 @@
 <section id="features" class="features">
   <div class="wrap">
     <div class="grid">
-      <article class="pcard">
-        <div class="phead"><span class="ic"><svg><use href="#i-palette"/></svg></span><h3>Farbe pro Person</h3></div>
-        <button class="phone" type="button" onclick="openLB(this)"><span class="notch"></span><span class="scr"><img src="img/hero_liste.png" alt="App-Screenshot"></span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>
-        <p>Jedes Mitglied hat seine Farbe &ndash; der Punkt am Produkt zeigt sofort, wer es eingetragen hat.</p>
-      </article>
-      <article class="pcard">
-        <div class="phead"><span class="ic"><svg><use href="#i-palette"/></svg></span><h3>Farbe pro Person</h3></div>
-        <button class="phone" type="button" onclick="openLB(this)"><span class="notch"></span><span class="scr"><img src="img/hero_liste.png" alt="App-Screenshot"></span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>
-        <p>Jedes Mitglied hat seine Farbe &ndash; der Punkt am Produkt zeigt sofort, wer es eingetragen hat.</p>
-      </article>
       <article class="pcard">
         <div class="phead"><span class="ic"><svg><use href="#i-palette"/></svg></span><h3>Farbe pro Person</h3></div>
         <button class="phone" type="button" onclick="openLB(this)"><span class="notch"></span><span class="scr"><img src="img/hero_liste.png" alt="App-Screenshot"></span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>
