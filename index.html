@@ -81,6 +81,8 @@
   .hero h1{font-size:clamp(32px,5.6vw,52px); font-weight:800}
   .hero h1 .sub{display:block; font-size:clamp(18px,3vw,26px); font-weight:600; color:var(--green-dark); margin-top:8px; letter-spacing:-.01em}
   .hero p.lead{font-size:clamp(16px,2.3vw,19px); color:var(--muted); max-width:38ch; margin:18px 0 0}
+  .hook{font-size:clamp(16px,2.2vw,19px); color:var(--muted); margin:16px 0 0; max-width:34ch}
+  @media(max-width:900px){.hook{margin-left:auto; margin-right:auto}}
   .mini-feats{display:flex; flex-direction:column; gap:15px; margin:24px 0 0}
   .mf{display:flex; align-items:center; gap:13px; text-align:left; background:#fff; border:1px solid var(--line); border-radius:14px; padding:13px 15px; box-shadow:0 6px 16px -14px rgba(18,62,23,.5)}
   .mf-ic{width:40px;height:40px;border-radius:50%;background:var(--mint);display:grid;place-items:center;flex:none;color:var(--green)}
@@ -176,6 +178,7 @@
   .cta-btn{display:inline-flex; align-items:center; gap:10px; margin-top:22px; background:var(--green); color:#fff; text-decoration:none; font-family:var(--disp); font-weight:700; font-size:16px; padding:14px 26px; border-radius:14px; box-shadow:var(--shadow-sm)}
   .cta-btn:hover{background:var(--green-dark)}
   .cta-btn svg{width:20px;height:20px}
+  .eta{color:var(--muted); font-size:14px; margin:10px 0 0; font-weight:500}
   @media(max-width:760px){.cta-card{grid-template-columns:1fr; text-align:center; gap:24px; padding:32px 24px} .cta-body p{margin-left:auto;margin-right:auto}}
 
   /* Feature-Karten mit Screenshot + Lightbox */
@@ -259,6 +262,8 @@
   .pf b{display:block; font-family:var(--disp); font-size:16px}
   .pf span{color:var(--muted); font-size:14px}
 
+  .infostrip{margin-top:34px}
+  .infostrip .pf span a{color:var(--green-dark); font-weight:600; white-space:nowrap}
   .pnote{text-align:center; color:var(--muted); font-size:12.5px; margin:20px auto 0; opacity:.85}
   .lb{position:fixed;inset:0;background:rgba(10,20,12,.82);display:none;align-items:center;justify-content:center;z-index:100;padding:24px;cursor:zoom-out}
   .lb.open{display:flex}
@@ -319,6 +324,7 @@
   <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="9.5" width="19" height="4.5" rx="1.2"/><path d="M4.3 14v6.3a1.2 1.2 0 0 0 1.2 1.2h13a1.2 1.2 0 0 0 1.2-1.2V14"/><line x1="12" y1="9.5" x2="12" y2="21.5"/><path d="M12 9.5H7.6a2.55 2.55 0 1 1 0-5.1C11.1 4.4 12 9.5 12 9.5z"/><path d="M12 9.5h4.4a2.55 2.55 0 1 0 0-5.1C12.9 4.4 12 9.5 12 9.5z"/></symbol>
   <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.6"/><line x1="10.6" y1="18.4" x2="13.4" y2="18.4"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.3l3.4 2"/></symbol>
+  <symbol id="i-cloudoff" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.1 7.3A5 5 0 0 1 17 8.5v.6h.8a3.7 3.7 0 0 1 2.6 6.3"/><path d="M16.4 18.9H6.6a3.9 3.9 0 0 1-.6-7.75"/><line x1="2.6" y1="2.6" x2="21.4" y2="21.4"/></symbol>
   <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4.5 4.5L19 7"/></symbol>
   <symbol id="i-basket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l-1.3 9.2a2 2 0 0 1-2 1.8H7.3a2 2 0 0 1-2-1.8L4 9z"/><path d="M8.5 9 12 3l3.5 6"/><path d="M9.5 13v3.2M14.5 13v3.2"/></symbol>
@@ -340,7 +346,8 @@
         <div class="hero-copy">
           <span class="eyebrow">Für Familien &amp; WG<span class="lc">s</span></span>
           <h1>Listikus<span class="sub">die clevere Einkaufsliste</span></h1>
-          <div class="mini-feats"><div class="mf"><span class="mf-ic"><svg><use href="#i-noads"/></svg></span><div><b>Ohne Werbung</b><span>Keine Banner, kein Tracking. Nur deine Liste.</span></div></div><div class="mf"><span class="mf-ic"><svg><use href="#i-sync"/></svg></span><div><b>Immer aktuell</b><span>Änderungen erscheinen in Echtzeit bei allen.</span></div></div><div class="mf"><span class="mf-ic"><svg><use href="#i-wand"/></svg></span><div><b>Clever erfassen</b><span>Text, Foto, Sprache &ndash; Listikus erkennt Deine Produkte.</span></div></div></div>
+          <p class="hook">Schluss mit &bdquo;Hast Du das schon gekauft?&ldquo;</p>
+          <div class="mini-feats"><div class="mf"><span class="mf-ic"><svg><use href="#i-noads"/></svg></span><div><b>Ohne Werbung</b><span>Keine Banner, kein Tracking. Nur Deine Liste.</span></div></div><div class="mf"><span class="mf-ic"><svg><use href="#i-sync"/></svg></span><div><b>Immer aktuell</b><span>Änderungen erscheinen in Echtzeit bei allen.</span></div></div><div class="mf"><span class="mf-ic"><svg><use href="#i-wand"/></svg></span><div><b>Clever erfassen</b><span>Text, Foto, Sprache &ndash; Listikus erkennt Deine Produkte.</span></div></div></div>
           <div class="hero-cta">
             <span class="playbadge" role="text">
               <svg><use href="#i-play"/></svg>
@@ -376,7 +383,7 @@
       <article class="pcard">
         <div class="phead"><span class="ic"><svg><use href="#i-flame"/></svg></span><h3>H&auml;ufig gekauft</h3></div>
         <button class="phone" type="button" onclick="openLB(this)"><span class="notch"></span><span class="scr"><img src="img/f_haeufig.png" alt="Vorschl&auml;ge h&auml;ufig gekaufter Produkte"></span><span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>
-        <p>Mit einem Tipp landen deine Favoriten wieder auf der Liste.</p>
+        <p>Mit einem Tipp landen Deine Favoriten wieder auf der Liste.</p>
       </article>
       <article class="pcard">
         <div class="phead"><span class="ic"><svg><use href="#i-wand"/></svg></span><h3>Intelligenter Import</h3></div>
@@ -386,6 +393,17 @@
     </div>
 
     <p class="shots-note">Alle Abbildungen zeigen die tats&auml;chliche Darstellung direkt aus Listikus.</p>
+
+    <div class="platforms infostrip">
+      <div class="pf">
+        <span class="pfic"><svg><use href="#i-shield"/></svg></span>
+        <div><b>In Deutschland entwickelt</b><span>Deine Listen liegen auf Servern in Frankfurt. <a href="datenschutz.html">Mehr dazu im Datenschutz</a></span></div>
+      </div>
+      <div class="pf">
+        <span class="pfic"><svg><use href="#i-cloudoff"/></svg></span>
+        <div><b>Auch ohne Empfang</b><span>&Auml;nderungen werden gespeichert und synchronisiert, sobald Du wieder online bist.</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -403,7 +421,7 @@
 
     <div class="trial">
       <span class="tic"><svg><use href="#i-gift"/></svg></span>
-      <div><b>4 Wochen kostenlos testen</b><span>Alle Funktionen. Ohne Einschr&auml;nkungen.</span></div>
+      <div><b>4 Wochen kostenlos testen</b><span>Alle Funktionen, ohne Einschr&auml;nkungen. Danach brauchst Du ein Abo.</span></div>
     </div>
 
     <div class="plans">
@@ -489,7 +507,8 @@
       </div>
       <div class="cta-body">
         <h2>Schon bald<br>im Google Play Store.</h2>
-        <p>Schreibe uns und wir informieren dich, sobald Listikus verfügbar ist.</p>
+        <p>Schreibe uns und wir informieren Dich, sobald Listikus verfügbar ist.</p>
+        <p class="eta">Geplant f&uuml;r Ende 2026.</p>
         <a class="cta-btn" href="mailto:listikus.einkaufsliste@gmail.com?subject=Bitte%20informieren%2C%20wenn%20Listikus%20verf%C3%BCgbar%20ist&body=Hallo%20Listikus-Team%2C%20bitte%20informiert%20mich%2C%20sobald%20Listikus%20im%20Google%20Play%20Store%20verf%C3%BCgbar%20ist."><svg><use href="#i-bell"/></svg> Benachrichtigt werden</a>
       </div>
     </div>
