@@ -103,7 +103,7 @@
 
   /* Hero-Screenshots */
   .shots{position:relative; display:flex; justify-content:center; gap:18px}
-  .shot{border-radius:26px; overflow:hidden; background:#0e2412; padding:7px; box-shadow:var(--shadow); border:1px solid rgba(0,0,0,.05); width:47%; max-width:230px}
+  .shot{border-radius:26px; overflow:hidden; background:#0e2412; padding:7px; box-shadow:var(--shadow); border:1px solid rgba(0,0,0,.05); width:47%; max-width:230px; cursor:zoom-in}
   .shot img{border-radius:20px; width:100%}
   .shot.a{transform:translateY(-10px) rotate(-1.5deg)}
   .shot.b{transform:translateY(14px) rotate(1.5deg)}
@@ -199,6 +199,9 @@
   /* Preis-Abschnitt */
   .pricing{position:relative; padding:34px 0 66px; overflow:hidden}
   .pricing .wrap{position:relative; z-index:1}
+  /* Preis-Kasten teilt sich den grünen Verlauf mit der Seitenbreite:
+     transparent statt cremefarben, ohne eigenen Rahmen/Schatten. */
+  .pricing .panel{background:transparent; backdrop-filter:none; border:none; box-shadow:none}
   .pricing-bg{position:absolute; inset:0; z-index:0}
   .pricing-bg::before{content:""; position:absolute; inset:0; background:
      radial-gradient(65% 55% at 82% 12%, rgba(46,125,50,.16), transparent 68%),
@@ -223,13 +226,10 @@
   .plans{display:grid; grid-template-columns:1fr 1fr; gap:26px; max-width:790px; margin:0 auto}
   @media(max-width:760px){.plans{grid-template-columns:1fr; max-width:420px}}
   .pplan{background:#fff; border:1.5px solid var(--green); border-radius:20px; padding:26px 24px; min-width:0}
-  .pplan.alt{background:linear-gradient(170deg,#C7E4C3 0%,#DFF0DD 45%,#EFF7EE 100%)}
-  .pplan.alt .prow{border-color:rgba(27,94,32,.22)}
   .pplan-head{display:flex; align-items:center; gap:14px}
   .pplan .pic{width:46px;height:46px;border-radius:12px;background:var(--mint-2);border:1px solid var(--line);
               display:grid;grid-auto-flow:column;grid-template-rows:repeat(3,8px);gap:5px;
               justify-content:center;align-content:center;flex:none}
-  .pplan.alt .pic{background:#fff}
   .pplan .pic .dot{width:8px;height:8px;border-radius:50%;display:block}
   .pplan h3{font-size:19px}
   .pplan .pmeta{color:var(--green-dark); font-size:14px; font-weight:600}
@@ -358,8 +358,8 @@
         </div>
 
         <div class="shots">
-          <div class="shot a"><img src="img/hero_liste.png" alt="Listikus Einkaufsliste mit Produkten, Mengen und farbigen Personen-Punkten" loading="eager"></div>
-          <div class="shot b"><img src="img/hero_mikro.png" alt="Produkte per Sprache erfassen in Listikus" loading="eager"></div>
+          <div class="shot a" role="button" tabindex="0" onclick="openLB(this)" onkeydown="if(event.key==='Enter')openLB(this)"><img src="img/hero_liste.png" alt="Listikus Einkaufsliste mit Produkten, Mengen und farbigen Personen-Punkten" loading="eager"></div>
+          <div class="shot b" role="button" tabindex="0" onclick="openLB(this)" onkeydown="if(event.key==='Enter')openLB(this)"><img src="img/hero_mikro.png" alt="Produkte per Sprache erfassen in Listikus" loading="eager"></div>
         </div>
       </div>
     </div>
