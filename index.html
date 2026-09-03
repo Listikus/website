@@ -252,7 +252,7 @@
   .platforms{display:grid; grid-template-columns:1fr 1fr; gap:0; max-width:790px; margin:26px auto 0;
              background:#fff; border:1px solid var(--line); border-radius:18px; overflow:hidden}
   @media(max-width:760px){.platforms{grid-template-columns:1fr; max-width:420px}}
-  .pf{display:flex; gap:14px; padding:22px 24px; min-width:0}
+  .pf{display:flex; align-items:center; gap:14px; padding:22px 24px; min-width:0}
   .pf + .pf{border-left:1px solid var(--line)}
   @media(max-width:760px){.pf + .pf{border-left:0; border-top:1px solid var(--line)}}
   .pf .pfic{width:42px;height:42px;border-radius:11px;background:var(--mint);color:var(--green);
@@ -278,6 +278,13 @@
   .freetier li svg{width:15px;height:15px;color:var(--green);flex:none}
   .freetier .fnote{color:var(--muted); font-size:14px; margin:0}
   @media(max-width:560px){.freetier{padding:18px 18px} .freetier ul{flex-direction:column; gap:9px}}
+  /* Weitere Funktionen (dreispaltig, Text unter dem Symbol) */
+  .platforms.three{grid-template-columns:repeat(3,1fr); margin-top:34px}
+  .platforms.three .pf{flex-direction:column; align-items:flex-start; gap:11px; padding:22px 22px}
+  @media(max-width:760px){
+    .platforms.three{grid-template-columns:1fr; max-width:420px}
+    .platforms.three .pf{flex-direction:row; align-items:center; gap:14px}
+  }
   .lb{position:fixed;inset:0;background:rgba(11,26,20,.82);display:none;align-items:center;justify-content:center;z-index:100;padding:24px;cursor:zoom-out}
   .lb.open{display:flex}
   .lb img{max-height:90vh;max-width:94vw;border-radius:22px;box-shadow:0 30px 80px -20px rgba(0,0,0,.7)}
@@ -339,6 +346,9 @@
   <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.3l3.4 2"/></symbol>
   <symbol id="i-cloudoff" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.1 7.3A5 5 0 0 1 17 8.5v.6h.8a3.7 3.7 0 0 1 2.6 6.3"/><path d="M16.4 18.9H6.6a3.9 3.9 0 0 1-.6-7.75"/><line x1="2.6" y1="2.6" x2="21.4" y2="21.4"/></symbol>
   <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.8"/><circle cx="6" cy="12" r="2.8"/><circle cx="18" cy="19" r="2.8"/><line x1="8.5" y1="10.6" x2="15.5" y2="6.4"/><line x1="8.5" y1="13.4" x2="15.5" y2="17.6"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h8.2l9.4 9.4a1.8 1.8 0 0 1 0 2.5l-5.7 5.7a1.8 1.8 0 0 1-2.5 0L3 11.2V3z"/><circle cx="7.6" cy="7.6" r="1.5"/></symbol>
+  <symbol id="i-archive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.6" y="3.5" width="18.8" height="5" rx="1.5"/><path d="M4.6 8.5v9.9a2 2 0 0 0 2 2h10.8a2 2 0 0 0 2-2V8.5"/><path d="M9.8 12.6h4.4"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4.5 4.5L19 7"/></symbol>
   <symbol id="i-basket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l-1.3 9.2a2 2 0 0 1-2 1.8H7.3a2 2 0 0 1-2-1.8L4 9z"/><path d="M8.5 9 12 3l3.5 6"/><path d="M9.5 13v3.2M14.5 13v3.2"/></symbol>
   <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M4 3.5v17a1 1 0 0 0 1.5.87l14-8.5a1 1 0 0 0 0-1.74l-14-8.5A1 1 0 0 0 4 3.5z"/></symbol>
@@ -405,12 +415,29 @@
       </article>
     </div>
 
+
     <p class="shots-note">Alle Abbildungen zeigen die tats&auml;chliche Darstellung direkt aus Listikus.</p>
+
+    <div class="platforms three">
+      <div class="pf">
+        <span class="pfic"><svg><use href="#i-share"/></svg></span>
+        <div><b>Direkt aus anderen Apps teilen</b><span>Nachricht, Foto oder Sprachnachricht &uuml;ber &bdquo;Teilen&ldquo; an Listikus schicken. Kein Abtippen.</span></div>
+      </div>
+      <div class="pf">
+        <span class="pfic"><svg><use href="#i-tag"/></svg></span>
+        <div><b>Rubriken statt Chaos</b><span>Ordne Produkte eigenen Rubriken zu und filtere oder sortiere die Liste danach.</span></div>
+      </div>
+      <div class="pf">
+        <span class="pfic"><svg><use href="#i-archive"/></svg></span>
+        <div><b>Archiv</b><span>Abgehaktes bleibt erhalten und ist mit einem Tipp wieder auf der Liste.</span></div>
+      </div>
+    </div>
+
 
     <div class="platforms infostrip">
       <div class="pf">
         <span class="pfic"><svg><use href="#i-shield"/></svg></span>
-        <div><b>In Deutschland entwickelt</b><span>Deine Listen liegen auf Servern in Frankfurt. <a href="datenschutz.html">Mehr dazu im Datenschutz</a></span></div>
+        <div><b>In Deutschland entwickelt</b><span>Deine Listen liegen auf Servern in Frankfurt. Mehr dazu im <a href="datenschutz.html">Datenschutz</a>.</span></div>
       </div>
       <div class="pf">
         <span class="pfic"><svg><use href="#i-cloudoff"/></svg></span>
@@ -440,7 +467,7 @@
     <div class="plans">
       <div class="pplan">
         <div class="pplan-head">
-          <span class="pic"><span class="dot" style="background:#1E88E5"></span><span class="dot" style="background:#00897B"></span><span class="dot" style="background:#00ACC1"></span></span>
+          <span class="pic"><span class="dot" style="background:#1E88E5"></span><span class="dot" style="background:#D2761A"></span><span class="dot" style="background:#D81B60"></span></span>
           <div><h3>Kleiner Haushalt</h3><span class="pmeta">Bis zu 3 Personen und 6 Listen</span></div>
         </div>
         <div class="prow">
