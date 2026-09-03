@@ -6,7 +6,7 @@
 <title>Listikus – Einkaufsliste-App für Familie &amp; WG, ohne Werbung</title>
 <meta name="description" content="Die gemeinsame Einkaufsliste für Familien und WGs: in Echtzeit für alle aktuell, per Text, Foto oder Sprache erfasst – ganz ohne Werbung. Bald für Android.">
 <link rel="canonical" href="https://listikus.de/">
-<meta name="theme-color" content="#2E7D32">
+<meta name="theme-color" content="#1E5B44">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -25,12 +25,12 @@
   @font-face{font-family:'Inter';font-style:normal;font-display:swap;font-weight:100 900;src:url('fonts/inter-variable.woff2') format('woff2')}
   @font-face{font-family:'Bricolage Grotesque';font-style:normal;font-display:swap;font-weight:200 800;src:url('fonts/bricolage-grotesque-variable.woff2') format('woff2')}
   :root{
-    --green:#2E7D32; --green-dark:#1B5E20; --green-deep:#123E17;
-    --mint:#EAF4E9; --mint-2:#F3F9F0; --cream:#FBFAF6;
-    --ink:#16241A; --muted:#5E6C60; --line:#E2E9DD;
-    --blue:#1E88E5; --petrol:#00897B; --orange:#FB8C00; --pink:#D81B60; --violet:#8E24AA; --red:#E53935; --indigo:#3949AB;
-    --shadow:0 22px 60px -22px rgba(18,62,23,.45);
-    --shadow-sm:0 12px 30px -16px rgba(18,62,23,.4);
+    --green:#1E5B44; --green-dark:#164A36; --green-deep:#0F3325;
+    --mint:#E9F0EA; --mint-2:#EEF3EF; --cream:#FBFAF6;
+    --ink:#1B211D; --muted:#4E5A53; --line:#E6E5DC;
+    --blue:#1E88E5; --petrol:#00897B; --tuerkis:#00ACC1; --orange:#D2761A; --red:#E53935; --pink:#D81B60; --violet:#8E24AA; --indigo:#3949AB; --braun:#6D4C41;
+    --shadow:0 22px 60px -22px rgba(15,51,37,.45);
+    --shadow-sm:0 12px 30px -16px rgba(15,51,37,.4);
     --disp:"Bricolage Grotesque",system-ui,sans-serif;
     --body:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   }
@@ -44,7 +44,7 @@
 
   /* Marke */
   .brand{display:inline-flex; align-items:center; gap:11px; font-family:var(--disp); font-weight:800; font-size:20px; color:var(--ink); text-decoration:none}
-  .brand .mk{width:32px; height:32px; border-radius:9px; background:var(--green); display:grid; place-items:center; box-shadow:0 5px 12px -4px rgba(46,125,50,.7); flex:none}
+  .brand .mk{width:32px; height:32px; border-radius:9px; background:var(--green); display:grid; place-items:center; box-shadow:0 5px 12px -4px rgba(30,91,68,.7); flex:none}
   .brand .mk svg{width:18px; height:18px; color:#fff}
 
   header{position:sticky; top:0; z-index:30; background:rgba(251,250,246,.82); backdrop-filter:saturate(1.4) blur(10px); border-bottom:1px solid var(--line)}
@@ -59,9 +59,9 @@
   .hero-bg{position:absolute; inset:0; overflow:hidden; z-index:0}
   .hero-bg::before{content:""; position:absolute; inset:0;
     background:
-      radial-gradient(70% 60% at 15% 10%, #3a9a40 0%, transparent 55%),
-      radial-gradient(60% 60% at 90% 20%, #1f6f27 0%, transparent 55%),
-      linear-gradient(160deg, #2E7D32 0%, #1B5E20 60%, #123E17 100%);}
+      radial-gradient(70% 60% at 15% 10%, #2C8B61 0%, transparent 55%),
+      radial-gradient(60% 60% at 90% 20%, #1A5340 0%, transparent 55%),
+      linear-gradient(160deg, #1E5B44 0%, #164A36 60%, #0F3325 100%);}
   .hero-bg::after{content:""; position:absolute; inset:0; opacity:.5;
     background-image:radial-gradient(rgba(255,255,255,.10) 1px, transparent 1.4px);
     background-size:22px 22px;}
@@ -83,7 +83,7 @@
   .hook{font-size:clamp(16px,2.2vw,19px); color:var(--muted); margin:16px 0 0; max-width:34ch}
   @media(max-width:900px){.hook{margin-left:auto; margin-right:auto}}
   .mini-feats{display:flex; flex-direction:column; gap:15px; margin:24px 0 0}
-  .mf{display:flex; align-items:center; gap:13px; text-align:left; background:#fff; border:1px solid var(--line); border-radius:14px; padding:13px 15px; box-shadow:0 6px 16px -14px rgba(18,62,23,.5)}
+  .mf{display:flex; align-items:center; gap:13px; text-align:left; background:#fff; border:1px solid var(--line); border-radius:14px; padding:13px 15px; box-shadow:0 6px 16px -14px rgba(15,51,37,.5)}
   .mf-ic{width:40px;height:40px;border-radius:50%;background:var(--mint);display:grid;place-items:center;flex:none;color:var(--green)}
   .mf-ic svg{width:20px;height:20px}
   .mf b{display:block; font-family:var(--disp); font-weight:700; font-size:16px; color:var(--ink); letter-spacing:-.01em}
@@ -102,7 +102,7 @@
 
   /* Hero-Screenshots */
   .shots{position:relative; display:flex; justify-content:center; gap:18px}
-  .shot{border-radius:26px; overflow:hidden; background:#0e2412; padding:7px; box-shadow:var(--shadow); border:1px solid rgba(0,0,0,.05); width:47%; max-width:230px; cursor:zoom-in}
+  .shot{border-radius:26px; overflow:hidden; background:#123528; padding:7px; box-shadow:var(--shadow); border:1px solid rgba(0,0,0,.05); width:47%; max-width:230px; cursor:zoom-in}
   .shot img{border-radius:20px; width:100%}
   .shot.a{transform:translateY(-10px) rotate(-1.5deg)}
   .shot.b{transform:translateY(14px) rotate(1.5deg)}
@@ -137,7 +137,7 @@
 
   /* Offline-Banner als Notification-Fläche */
   .shot-wrap.banner{align-items:center; padding:16px}
-  .shot-wrap.banner img{border-radius:12px; border:1px solid var(--line); box-shadow:0 6px 16px -10px rgba(18,62,23,.4)}
+  .shot-wrap.banner img{border-radius:12px; border:1px solid var(--line); box-shadow:0 6px 16px -10px rgba(15,51,37,.4)}
 
   /* Vertrauens-Zeile */
   .trust{display:flex; justify-content:center; gap:14px 30px; flex-wrap:wrap; margin-top:38px; color:var(--muted); font-size:14.5px; font-weight:500}
@@ -186,8 +186,8 @@
   .pcard .phead .ic{width:42px;height:42px;border-radius:11px;background:var(--mint);color:var(--green);display:grid;place-items:center;flex:none}
   .pcard .phead .ic svg{width:22px;height:22px}
   .pcard .phead h3{font-size:18px}
-  .pcard .phone{position:relative;display:block;width:100%;border:0;padding:5px;background:#12241a;border-radius:22px;cursor:zoom-in;box-shadow:0 16px 34px -20px rgba(18,62,23,.5)}
-  .pcard .phone .notch{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:46px;height:6px;border-radius:6px;background:#0c1a12;z-index:2}
+  .pcard .phone{position:relative;display:block;width:100%;border:0;padding:5px;background:#123528;border-radius:22px;cursor:zoom-in;box-shadow:0 16px 34px -20px rgba(15,51,37,.5)}
+  .pcard .phone .notch{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:46px;height:6px;border-radius:6px;background:#0B241B;z-index:2}
   .pcard .phone .scr{display:block;border-radius:17px;overflow:hidden;max-height:340px}
   .pcard .phone .scr img{width:100%;display:block;transition:transform .25s ease}
   .pcard .phone .zoom{position:absolute;right:16px;bottom:14px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--green-dark);display:grid;place-items:center;box-shadow:0 4px 10px -3px rgba(0,0,0,.4)}
@@ -203,9 +203,9 @@
   .pricing .panel{background:transparent; backdrop-filter:none; border:none; box-shadow:none}
   .pricing-bg{position:absolute; inset:0; z-index:0}
   .pricing-bg::before{content:""; position:absolute; inset:0; background:
-     radial-gradient(65% 55% at 82% 12%, rgba(46,125,50,.16), transparent 68%),
-     radial-gradient(55% 50% at 8% 92%, rgba(0,137,123,.13), transparent 68%),
-     linear-gradient(165deg,#DCEEDA 0%,#CBE5C8 58%,#BFDFBC 100%)}
+     radial-gradient(65% 55% at 82% 12%, rgba(30,91,68,.16), transparent 68%),
+     radial-gradient(55% 50% at 8% 92%, rgba(44,139,97,.13), transparent 68%),
+     linear-gradient(165deg,#DCE8E0 0%,#CBDCD2 58%,#BFD3C8 100%)}
   .pricing-bg::after{content:""; position:absolute; inset:0; opacity:.45;
      background-image:radial-gradient(rgba(255,255,255,.55) 1px, transparent 1.4px);
      background-size:22px 22px}
@@ -217,7 +217,7 @@
   .trial{display:flex; align-items:center; gap:16px; max-width:520px; margin:0 auto 26px;
          background:#fff; border:1px solid var(--line); border-radius:18px; padding:18px 24px}
   .trial .tic{width:48px;height:48px;border-radius:50%;background:var(--green);display:grid;place-items:center;flex:none;
-              box-shadow:0 8px 18px -8px rgba(46,125,50,.8)}
+              box-shadow:0 8px 18px -8px rgba(30,91,68,.8)}
   .trial .tic svg{width:24px;height:24px;color:#fff}
   .trial b{display:block; font-family:var(--disp); font-size:18px}
   .trial span{color:var(--muted); font-size:14.5px}
@@ -261,11 +261,24 @@
   .pf b{display:block; font-family:var(--disp); font-size:16px}
   .pf span{color:var(--muted); font-size:14px}
 
-  .infostrip{margin-top:34px; background:var(--mint); border-color:rgba(46,125,50,.22)}
-  .infostrip .pf + .pf{border-color:rgba(46,125,50,.16)}
+  .infostrip{margin-top:34px; background:var(--mint); border-color:rgba(30,91,68,.22)}
+  .infostrip .pf + .pf{border-color:rgba(30,91,68,.16)}
   .infostrip .pf span a{color:var(--green-dark); font-weight:600; white-space:nowrap}
   .pnote{text-align:center; color:var(--muted); font-size:12.5px; margin:20px auto 0; opacity:.85}
-  .lb{position:fixed;inset:0;background:rgba(10,20,12,.82);display:none;align-items:center;justify-content:center;z-index:100;padding:24px;cursor:zoom-out}
+  /* Kostenlose Stufe */
+  .freetier{max-width:790px; margin:24px auto 0; background:var(--mint);
+            border:1px solid rgba(30,91,68,.22); border-radius:18px; padding:20px 24px}
+  .freetier .fhead{display:flex; align-items:center; gap:14px; margin-bottom:12px}
+  .freetier .fic{width:42px;height:42px;border-radius:11px;background:#fff;color:var(--green);
+                 display:grid;place-items:center;flex:none;border:1px solid var(--line)}
+  .freetier .fic svg{width:21px;height:21px}
+  .freetier b{font-family:var(--disp); font-size:16px}
+  .freetier ul{list-style:none; margin:0 0 10px; padding:0; display:flex; gap:8px 22px; flex-wrap:wrap}
+  .freetier li{display:inline-flex; align-items:center; gap:7px; font-size:14.5px; font-weight:500}
+  .freetier li svg{width:15px;height:15px;color:var(--green);flex:none}
+  .freetier .fnote{color:var(--muted); font-size:14px; margin:0}
+  @media(max-width:560px){.freetier{padding:18px 18px} .freetier ul{flex-direction:column; gap:9px}}
+  .lb{position:fixed;inset:0;background:rgba(11,26,20,.82);display:none;align-items:center;justify-content:center;z-index:100;padding:24px;cursor:zoom-out}
   .lb.open{display:flex}
   .lb img{max-height:90vh;max-width:94vw;border-radius:22px;box-shadow:0 30px 80px -20px rgba(0,0,0,.7)}
   .lb .x{position:absolute;top:20px;right:24px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;border:0;font-size:24px;line-height:1;cursor:pointer}
@@ -320,7 +333,7 @@
   <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
   <symbol id="i-lists" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="15" rx="2.5"/><path d="M7 2.6h9.5A2.5 2.5 0 0 1 19 5.1v12"/><path d="M6.6 11h6.8M6.6 15h4.4"/></symbol>
-  <symbol id="i-flame" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M13.4 1.6c.5 3-1 4.5-2.6 6C9 9.3 7.2 11 7.2 14a6.4 6.4 0 0 0 12.8 0c0-3.2-1.7-5.3-3.2-7.1-.4 1-1 1.7-1.8 2.2.4-2.9-.3-5.6-1.6-7.5z"/><path d="M11.6 14.6c-.9 1-1.5 1.9-1.5 3.1a3 3 0 0 0 6 0c0-1.6-1-2.6-2-3.6-.3.6-.7 1-1.2 1.3.1-.9-.5-1.7-1.3-2.3-.2.6 0 1.1 0 1.5z" fill="#EAF4E9" opacity=".75"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M13.4 1.6c.5 3-1 4.5-2.6 6C9 9.3 7.2 11 7.2 14a6.4 6.4 0 0 0 12.8 0c0-3.2-1.7-5.3-3.2-7.1-.4 1-1 1.7-1.8 2.2.4-2.9-.3-5.6-1.6-7.5z"/><path d="M11.6 14.6c-.9 1-1.5 1.9-1.5 3.1a3 3 0 0 0 6 0c0-1.6-1-2.6-2-3.6-.3.6-.7 1-1.2 1.3.1-.9-.5-1.7-1.3-2.3-.2.6 0 1.1 0 1.5z" fill="#E9F0EA" opacity=".75"/></symbol>
   <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="9.5" width="19" height="4.5" rx="1.2"/><path d="M4.3 14v6.3a1.2 1.2 0 0 0 1.2 1.2h13a1.2 1.2 0 0 0 1.2-1.2V14"/><line x1="12" y1="9.5" x2="12" y2="21.5"/><path d="M12 9.5H7.6a2.55 2.55 0 1 1 0-5.1C11.1 4.4 12 9.5 12 9.5z"/><path d="M12 9.5h4.4a2.55 2.55 0 1 0 0-5.1C12.9 4.4 12 9.5 12 9.5z"/></symbol>
   <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.6"/><line x1="10.6" y1="18.4" x2="13.4" y2="18.4"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.3l3.4 2"/></symbol>
@@ -416,18 +429,18 @@
     <div class="phead-block">
       <span class="eyebrow">Transparent und fair</span>
       <h2>Ein Preis f&uuml;r den ganzen Haushalt</h2>
-      <p><strong>Ein Haushaltsmitglied &uuml;bernimmt das Abo</strong> &ndash;<br>alle anderen nutzen Listikus kostenlos.</p>
+      <p><strong>Der Haushalts-Administrator &uuml;bernimmt das Abo</strong> &ndash;<br>alle anderen nutzen Listikus kostenlos.</p>
     </div>
 
     <div class="trial">
       <span class="tic"><svg><use href="#i-gift"/></svg></span>
-      <div><b>4 Wochen kostenlos testen</b><span>Alle Funktionen, ohne Einschr&auml;nkungen. Danach brauchst Du ein Abo.</span></div>
+      <div><b>4 Wochen kostenlos testen</b><span>Alle Funktionen, ohne Einschr&auml;nkungen und ohne Zahlungsdaten. Danach nutzt Du Listikus allein mit einer Liste weiter.</span></div>
     </div>
 
     <div class="plans">
       <div class="pplan">
         <div class="pplan-head">
-          <span class="pic"><span class="dot" style="background:#1E88E5"></span><span class="dot" style="background:#D81B60"></span><span class="dot" style="background:#FB8C00"></span></span>
+          <span class="pic"><span class="dot" style="background:#1E88E5"></span><span class="dot" style="background:#00897B"></span><span class="dot" style="background:#00ACC1"></span></span>
           <div><h3>Kleiner Haushalt</h3><span class="pmeta">Bis zu 3 Personen und 6 Listen</span></div>
         </div>
         <div class="prow">
@@ -442,7 +455,7 @@
       </div>
       <div class="pplan alt">
         <div class="pplan-head">
-          <span class="pic"><span class="dot" style="background:#1E88E5"></span><span class="dot" style="background:#D81B60"></span><span class="dot" style="background:#FB8C00"></span><span class="dot" style="background:#8E24AA"></span><span class="dot" style="background:#00897B"></span><span class="dot" style="background:#E53935"></span></span>
+          <span class="pic"><span class="dot" style="background:#1E88E5"></span><span class="dot" style="background:#00897B"></span><span class="dot" style="background:#00ACC1"></span><span class="dot" style="background:#D2761A"></span><span class="dot" style="background:#E53935"></span><span class="dot" style="background:#D81B60"></span></span>
           <div><h3>Gro&szlig;er Haushalt</h3><span class="pmeta">Bis zu 6 Personen und 10 Listen</span></div>
         </div>
         <div class="prow">
@@ -455,6 +468,20 @@
           <li><svg><use href="#i-check"/></svg> Jederzeit k&uuml;ndbar</li>
         </ul>
       </div>
+    </div>
+
+
+    <div class="freetier">
+      <div class="fhead">
+        <span class="fic"><svg><use href="#i-basket"/></svg></span>
+        <b>Auch ohne Abo nutzbar</b>
+      </div>
+      <ul>
+        <li><svg><use href="#i-check"/></svg> Eine Liste f&uuml;r Dich allein</li>
+        <li><svg><use href="#i-check"/></svg> Archiv und &bdquo;H&auml;ufig gekauft&ldquo;</li>
+        <li><svg><use href="#i-check"/></svg> Weitere Listen bleiben lesbar erhalten</li>
+      </ul>
+      <p class="fnote">F&uuml;r den gemeinsamen Haushalt und das Erfassen per Text, Foto oder Sprache brauchst Du ein Abo.</p>
     </div>
 
     <div class="platforms">
@@ -479,30 +506,30 @@
     <div class="cta-card">
       <div class="cta-art">
         <svg class="cta-illu" viewBox="0 0 240 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Einkaufskorb mit Lebensmitteln">
-          <circle cx="120" cy="108" r="96" fill="#EAF4E9"/>
-          <path d="M40 46c-3-5-11-3-11 3 0 5 11 11 11 11s11-6 11-11c0-6-8-8-11-3z" fill="#C8E6C9"/>
-          <path d="M206 62c-2-4-9-2-9 2 0 4 9 8 9 8s9-4 9-8c0-4-7-6-9-2z" fill="#C8E6C9"/>
+          <circle cx="120" cy="108" r="96" fill="#E9F0EA"/>
+          <path d="M40 46c-3-5-11-3-11 3 0 5 11 11 11 11s11-6 11-11c0-6-8-8-11-3z" fill="#C7DCD0"/>
+          <path d="M206 62c-2-4-9-2-9 2 0 4 9 8 9 8s9-4 9-8c0-4-7-6-9-2z" fill="#C7DCD0"/>
           <path d="M74 114 Q120 34 166 114" fill="none" stroke="#37474F" stroke-width="7" stroke-linecap="round"/>
           <g transform="rotate(28 88 104)">
             <rect x="44" y="94" width="80" height="19" rx="9.5" fill="#E3B877" stroke="#C99A55" stroke-width="2"/>
             <path d="M60 100l4 9M74 98l4 9M88 98l4 9M102 100l4 9" stroke="#C99A55" stroke-width="2" stroke-linecap="round"/>
           </g>
           <g>
-            <circle cx="151" cy="72" r="13" fill="#66BB6A"/>
-            <circle cx="165" cy="77" r="11" fill="#4CAF50"/>
-            <circle cx="159" cy="61" r="10" fill="#81C784"/>
-            <rect x="154" y="82" width="6" height="18" rx="3" fill="#A5D6A7"/>
+            <circle cx="151" cy="72" r="13" fill="#5AA37F"/>
+            <circle cx="165" cy="77" r="11" fill="#47936F"/>
+            <circle cx="159" cy="61" r="10" fill="#7FB79A"/>
+            <rect x="154" y="82" width="6" height="18" rx="3" fill="#A6C2B2"/>
           </g>
           <g>
             <rect x="104" y="56" width="26" height="56" rx="9" fill="#CDE8FB" stroke="#9CCDF0" stroke-width="2"/>
             <rect x="110" y="44" width="14" height="14" rx="4" fill="#9CCDF0"/>
             <rect x="102" y="80" width="30" height="12" fill="#ffffff" opacity="0.75"/>
           </g>
-          <ellipse cx="120" cy="114" rx="80" ry="16" fill="#388E3C"/>
-          <path d="M46 114 L62 188 a8 8 0 0 0 8 6 h100 a8 8 0 0 0 8-6 L194 114 Z" fill="#2E7D32"/>
-          <path d="M70 118 L78 192 M96 118 L100 194 M120 118 L120 194 M144 118 L140 192 M170 118 L162 192" stroke="#43A047" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
-          <path d="M52 136 h136 M58 164 h124" stroke="#43A047" stroke-width="4" opacity="0.7"/>
-          <rect x="42" y="106" width="156" height="18" rx="9" fill="#43A047"/>
+          <ellipse cx="120" cy="114" rx="80" ry="16" fill="#24704F"/>
+          <path d="M46 114 L62 188 a8 8 0 0 0 8 6 h100 a8 8 0 0 0 8-6 L194 114 Z" fill="#1E5B44"/>
+          <path d="M70 118 L78 192 M96 118 L100 194 M120 118 L120 194 M144 118 L140 192 M170 118 L162 192" stroke="#2C8B61" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+          <path d="M52 136 h136 M58 164 h124" stroke="#2C8B61" stroke-width="4" opacity="0.7"/>
+          <rect x="42" y="106" width="156" height="18" rx="9" fill="#2C8B61"/>
         </svg>
       </div>
       <div class="cta-body">
