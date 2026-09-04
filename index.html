@@ -196,23 +196,28 @@
   .pcard p{color:var(--muted);font-size:14.5px;margin:0}
   .shots-note{text-align:center; color:var(--muted); font-size:13.5px; margin:30px auto 0}
   /* Preis-Abschnitt */
-  .pricing{position:relative; padding:34px 0 66px; overflow:hidden}
+  .pricing{position:relative; padding:60px 0 72px; overflow:hidden}
   .pricing .wrap{position:relative; z-index:1}
   /* Preis-Kasten teilt sich den grünen Verlauf mit der Seitenbreite:
      transparent statt cremefarben, ohne eigenen Rahmen/Schatten. */
   .pricing .panel{background:transparent; backdrop-filter:none; border:none; box-shadow:none}
   .pricing-bg{position:absolute; inset:0; z-index:0}
   .pricing-bg::before{content:""; position:absolute; inset:0; background:
-     radial-gradient(65% 55% at 82% 12%, rgba(30,91,68,.16), transparent 68%),
-     radial-gradient(55% 50% at 8% 92%, rgba(44,139,97,.13), transparent 68%),
-     linear-gradient(165deg,#DCE8E0 0%,#CBDCD2 58%,#BFD3C8 100%)}
-  .pricing-bg::after{content:""; position:absolute; inset:0; opacity:.45;
-     background-image:radial-gradient(rgba(255,255,255,.55) 1px, transparent 1.4px);
+     radial-gradient(70% 60% at 15% 10%, #2C8B61 0%, transparent 55%),
+     radial-gradient(60% 60% at 90% 20%, #1A5340 0%, transparent 55%),
+     linear-gradient(160deg, #1E5B44 0%, #164A36 60%, #0F3325 100%)}
+  .pricing-bg::after{content:""; position:absolute; inset:0; opacity:.5;
+     background-image:radial-gradient(rgba(255,255,255,.10) 1px, transparent 1.4px);
      background-size:22px 22px}
   .phead-block{text-align:left; max-width:790px; margin:0 auto 26px}
   .phead-block h2{font-size:clamp(26px,4.4vw,38px)}
   .phead-block p{color:var(--muted); font-size:17px; margin:13px 0 0}
   .phead-block p strong{color:var(--ink)}
+  /* Texte auf der dunklen Preisflaeche */
+  .pricing .phead-block h2{color:#fff}
+  .pricing .phead-block p{color:rgba(255,255,255,.84)}
+  .pricing .phead-block p strong{color:#fff}
+  .pricing .pnote{color:rgba(255,255,255,.65); opacity:1}
 
   .trial{display:flex; align-items:center; gap:16px; max-width:520px; margin:0 auto 26px;
          background:#fff; border:1px solid var(--line); border-radius:18px; padding:18px 24px}
