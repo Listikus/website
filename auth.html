@@ -158,13 +158,6 @@
 (function () {
   "use strict";
 
-  // Öffentlicher Client-Schlüssel des Projekts familienliste-b97a2. Firebase
-  // legt ihn per Design offen (er steht auch im Link der E-Mail); die
-  // Datenschutzebene sind die Firestore-Regeln, nicht dieser Schlüssel.
-  // Bewusst fest verdrahtet statt aus der URL übernommen, damit kein
-  // manipulierter Link auf ein fremdes Projekt zeigen kann.
-  var API_KEY = "AIzaSyDaI6Goun7wcIwNc_CdJHmq3xhymHy-R-4";
-
   var ENDPOINT = "https://identitytoolkit.googleapis.com/v1/accounts:";
   var MIN_PW = 6;                       // wie im Registrierungs-Screen der App
   var APP_LINK = "familienliste://open"; // braucht den Intent-Filter in der App
@@ -172,6 +165,14 @@
   var params = new URLSearchParams(location.search);
   var mode = params.get("mode") || "";
   var oobCode = params.get("oobCode") || "";
+  // Den Client-Schlüssel hängt Firebase selbst an den Link in der E-Mail
+  // (dokumentierter Parameter neben mode und oobCode). Wir übernehmen ihn von
+  // dort, statt ihn hier fest einzutragen: dann liegt kein AIza…-String im
+  // öffentlichen Repo, den GitHubs Secret-Scanner anschlägt, und es gibt
+  // nichts zu rotieren. Ein selbst gebastelter Link mit fremdem Schlüssel
+  // kann höchstens einen fremden oobCode im fremden Projekt einlösen –
+  // an Listikus-Daten kommt er damit nicht.
+  var apiKey = params.get("apiKey") || "";
   var card = document.getElementById("card");
 
   var TITLES = {
@@ -224,7 +225,7 @@
   // ─── Netz ───────────────────────────────────────────────────────────────
   /** POST an die Identity-Toolkit-API. Wirft ein Error mit dem Google-Code. */
   function post(method, body) {
-    return fetch(ENDPOINT + method + "?key=" + encodeURIComponent(API_KEY), {
+    return fetch(ENDPOINT + method + "?key=" + encodeURIComponent(apiKey), {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(body)
@@ -389,7 +390,7 @@
   }
 
   // ─── Weiche ─────────────────────────────────────────────────────────────
-  if (!oobCode || !TITLES[mode]) {
+  if (!oobCode || !TITLES[mode] || !/^AIza[A-Za-z0-9_-]{20,}$/.test(apiKey)) {
     showError("Link unvollständig",
       "Dieser Link lässt sich nicht zuordnen. Bitte tippe den Link in der " +
       "E-Mail direkt an, statt ihn abzuschreiben – oder fordere in Listikus " +
